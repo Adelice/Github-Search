@@ -20,16 +20,16 @@ userRequest( userName){
   interface ApiResponse{
     avatar_url: string;
     name:string;
-    repos:number;
+   public_repos:number;
     followers:number;
     following:number;
     html_url:string
   }
   let promise =new Promise((resolve,reject)=>{
-    this.http.get<ApiResponse>("https://api.github.com/users/" + userInput).toPromise().then(response=>{
+    this.http.get<ApiResponse>("https://api.github.com/users/" + userInput + "?access_token=97cd8b34a489c19183ac95c42e082027f28519d8").toPromise().then(response=>{
       this.user.avatar_url=response.avatar_url
       this.user.name=response.name
-      this.user.public_repos=response.repos
+      this.user.public_repos=response.public_repos
       this.user.followers=response.followers
       this.user.following=response.following
       this.user.html_url=response.html_url
