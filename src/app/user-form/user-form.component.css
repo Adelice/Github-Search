@@ -19,3 +19,6 @@
     
     text-transform: uppercase
 }
+.container-fluid{
+    background-size: cover;
+}
