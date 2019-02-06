@@ -29,7 +29,7 @@ userRequest( userName){
     this.http.get<ApiResponse>("https://api.github.com/users/" + userInput).toPromise().then(response=>{
       this.user.avatar_url=response.avatar_url
       this.user.name=response.name
-      this.user.repos=response.repos
+      this.user.public_repos=response.repos
       this.user.followers=response.followers
       this.user.following=response.following
       this.user.html_url=response.html_url
@@ -40,7 +40,7 @@ userRequest( userName){
     error=>{
       this.user.avatar_url=" "
       this.user.name=""
-      this.user.repos=0
+      this.user.public_repos=0
       this.user.followers=0
       this.user.following=0
       this.user.html_url=""
