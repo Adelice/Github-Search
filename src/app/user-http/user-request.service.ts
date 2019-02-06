@@ -26,7 +26,7 @@ userRequest( userName){
     html_url:string
   }
   let promise =new Promise((resolve,reject)=>{
-    this.http.get<ApiResponse>("https://api.github.com/users/" + userInput + "?access_token=783f06e73673a10f2151f14f64f5b61b466334ae").toPromise().then(response=>{
+    this.http.get<ApiResponse>("https://api.github.com/users/" + userInput).toPromise().then(response=>{
       this.user.avatar_url=response.avatar_url
       this.user.name=response.name
       this.user.repos=response.repos
